@@ -1,0 +1,61 @@
+import styled from 'styled-components';
+import { shade } from 'polished';
+import backgroundSignUp from '../../assets/backgroundSignUp.png';
+
+export const Container = styled.div`
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  place-content: center;
+  align-items: center;
+
+  form {
+    margin: 80px;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+    h1 {
+      margin-bottom: 24px;
+    }
+
+    a {
+      color: #f4ede8;
+      margin-top: 24px;
+      text-decoration: none;
+      display: block;
+      transition: color 0.2s;
+      &:hover {
+        color: ${shade(0.2, '#f4ede8')};
+      }
+    }
+  }
+  > a {
+    color: #ff9000;
+    margin-top: 24px;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: ${shade(0.2, '#ff9000')};
+    }
+
+    svg {
+      margin-right: 16px;
+    }
+  }
+`;
+
+export const Background = styled.div`
+  flex: 1;
+  background: url(${backgroundSignUp}) no-repeat center;
+  background-size: cover;
+`;
