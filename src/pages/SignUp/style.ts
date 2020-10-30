@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { shade } from 'polished';
 import backgroundSignUp from '../../assets/backgroundSignUp.png';
@@ -20,6 +21,7 @@ export const Content = styled.div`
     margin: 80px;
     text-align: center;
     width: 100%;
+
     padding: 0 10px;
     h1 {
       margin-bottom: 24px;
@@ -58,4 +60,26 @@ export const Background = styled.div`
   flex: 1;
   background: url(${backgroundSignUp}) no-repeat center;
   background-size: cover;
+`;
+
+export const Bola = styled.div`
+  border-radius: 50%;
+  border: 2px solid #fff;
+  min-width: 90px;
+  min-height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  div {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    &:hover {
+      border: 2px dashed #ff9000;
+    }
+  }
 `;

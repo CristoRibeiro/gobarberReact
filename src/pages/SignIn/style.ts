@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { shade } from 'polished';
 import SignInBackground from '../../assets/backgroundSignIn.png';

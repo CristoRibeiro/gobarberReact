@@ -34,6 +34,9 @@
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
+    "no-unused-expressions":"off",
+    "typescript-eslint/ban-types":"off",
+    "eslint/ban-types":"off",
     "react/jsx-props-no-spreading": "off",
 
     "import/extensions": [
