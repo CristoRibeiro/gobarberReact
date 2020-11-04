@@ -1,7 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 import backgroundSignUp from '../../assets/backgroundSignUp.png';
+
+const appearFromRight = keyframes`
+from{
+  opacity:0;
+  transform: translateX(50px);
+}
+to{
+  opacity:1;
+  transform: translateX(0);
+}`;
 
 export const Container = styled.div`
   height: 100vh;
@@ -16,6 +26,17 @@ export const Content = styled.div`
   width: 100%;
   place-content: center;
   align-items: center;
+  overflow-x: hidden;
+`;
+
+export const AnimatedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+  place-content: center;
+  align-items: center;
+  animation: ${appearFromRight} 0.8s;
 
   form {
     margin: 80px;

@@ -5,7 +5,7 @@ import {
   FiInfo,
   FiXCircle,
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
+import { AnimatedValue } from 'react-spring';
 import { Container } from './style';
 import { ToastData, useToast } from '../../../hooks/toast';
 
@@ -16,9 +16,10 @@ const icons = {
 };
 interface ToastProps {
   toast: ToastData;
+  style: object;
 }
 
-export const Toast: React.FC<ToastProps> = ({ toast }) => {
+export const Toast: React.FC<ToastProps> = ({ toast, style }) => {
   const { removeToast } = useToast();
   const [timer, setTimer] = useState(0);
 
@@ -42,8 +43,9 @@ export const Toast: React.FC<ToastProps> = ({ toast }) => {
     <Container
       key={toast.id}
       type={toast.type}
-      hasDescription={!!toast.message}
+      hasDescription
       onMouseEnter={handleStopTime}
+      style={style}
     >
       {toast.type && icons[toast.type || 'info']}
       <div>

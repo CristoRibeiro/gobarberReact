@@ -12,7 +12,7 @@ interface SignInProviderData {
 interface ProviderData {
   user: object;
   signIn(data: SignInProviderData): Promise<void>;
-  signUp(): void;
+  signOut(): void;
 }
 
 const AuthContext = createContext<ProviderData>({} as ProviderData);
@@ -45,7 +45,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     [],
   );
 
-  const signUp = useCallback(() => {
+  const signOut = useCallback(() => {
     localStorage.removeItem('@GoBarber:token');
     localStorage.removeItem('@GoBarber:user');
 
@@ -53,7 +53,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, signUp }}>
+    <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
